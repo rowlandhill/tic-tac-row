@@ -25,9 +25,21 @@
       </form>
 
       <form id="sign-in">
+        <fieldset>
+          <legend>Sign in!</legend>
           <input name="credentials[email]" type="text" value="an@example.email">
           <input name="credentials[password]" type="password" value="an example password">
           <input type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+
+      <form id="change-password">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="old password">
+          <input type="password" name="passwords[new]" placeholder="new password">
+          <input type="submit" name="submit" value="Change Password!">
+        </fieldset>
       </form>
 
       <div id="container">
