@@ -20,6 +20,12 @@ $(() => {
   authEvents.addHandlers()
 })
 
+// const gameLogic = require('./gamelogic.js')
+//
 // $(() => {
-//   gameLogic()
+//   gameLogic.startGame()
+//   gameLogic.changeAlert()
+//   gameLogic.nextMove()
+//   gameLogic.changeTurn()
+//   gameLogic.winnerCheck()
 // })
