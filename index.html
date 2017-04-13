@@ -10,7 +10,7 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="assets/scripts/gamelogic.js"></script>
+      <!-- <script src="assets/scripts/gamelogic.js"></script> -->
     </head>
     <body onLoad="startGame()" class="container-fluid">
       <h1>Tic Tac Row</h1>
@@ -54,19 +54,19 @@
       <div id="alert">Turns, winners, etc...</div>
     <table id="gameboard">
       <tr>
-        <td class="square" onClick="nextMove(this)" data-square="0"></td>
-        <td class="square" onClick="nextMove(this)" data-square="1"></td>
-        <td class="square" onClick="nextMove(this)" data-square="2"></td>
+        <td class="square" data-square="0"></td>
+        <td class="square" data-square="1"></td>
+        <td class="square" data-square="2"></td>
       </tr>
       <tr>
-        <td class="square" onClick="nextMove(this)" data-square="3"></td>
-        <td class="square" onClick="nextMove(this)" data-square="4"></td>
-        <td class="square" onClick="nextMove(this)" data-square="5"></td>
+        <td class="square" data-square="3"></td>
+        <td class="square" data-square="4"></td>
+        <td class="square" data-square="5"></td>
       </tr>
       <tr>
-        <td class="square" onClick="nextMove(this)" data-square="6"></td>
-        <td class="square" onClick="nextMove(this)" data-square="7"></td>
-        <td class="square" onClick="nextMove(this)" data-square="8"></td>
+        <td class="square" data-square="6"></td>
+        <td class="square" data-square="7"></td>
+        <td class="square" data-square="8"></td>
       </tr>
     </div>
     </table>
