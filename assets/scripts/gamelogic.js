@@ -15,35 +15,70 @@ const winningCombos = [
 const theBoard = $('td.square')
 
 const changeAlert = (txt) => {
-  const element = $('#alert')
+  const element = $('#alert')[0]
   $(element).text(txt)
 }
 
 const startGame = () => {
   changeAlert(turn + ' always starts first')
 }
-
+// when a square is clicked, check to see what is in the square
+// if a turn has been played, change alert to pick another square
 $('td.square').on('click', function () {
-  $(this).text(turn)
-  changeTurn()
+  if ($(this)[0].innerHTML === '') {
+    $(this).text(turn)
+    changeTurn()
+  } else {
+    changeAlert('pick another square!')
+  }
 })
 
 const changeTurn = () => {
-  $('theBoard[0]').text(turn)
   if (turn === 'X') {
     turn = 'O'
   } else {
     turn = 'X'
   }
+  changeAlert('it\'s ' + turn + '\'s turn now')
 }
 
-$('theBoard[0]').on('click', changeTurn)
+// $('.col-xs-4').on('click', function () {
+//  if (this.textContent === '') {
+//    $(this).text(turn)
+//    gameArray[$(this).data('id')] = turn
+//    checkWinner()
+//  } else {
+//    changeMessage('please, pick another square')
+//  }
+// })
+
+const winnerCheck = function () {
+  if ($('td.square')[0].innerHTML === $('td.square')[1].innerHTML && $('td.square')[1].innerHTML === $('td.square')[2].innerHTML && $('td.square')[0].innerHTML)
+    // endGame()
+    console.log('win!')
+  else if ($('td.square')[3].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[5].innerHTML && $('td.square')[3].innerHTML)
+     console.log(' wins!')
+   else if ($('td.square')[6].innerHTML === $('td.square')[7].innerHTML && $('td.square')[7].innerHTML === $('td.square')[8].innerHTML && $('td.square')[6].innerHTML)
+     console.log(' wins!')
+   else if ($('td.square')[0].innerHTML === $('td.square')[3].innerHTML && $('td.square')[3].innerHTML === $('td.square')[6].innerHTML && $('td.square')[0].innerHTML)
+     console.log(' wins!')
+   else if ($('td.square')[1].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[7].innerHTML && $('td.square')[1].innerHTML)
+     console.log(' wins!')
+   else if ($('td.square')[2].innerHTML === $('td.square')[5].innerHTML && $('td.square')[5].innerHTML === $('td.square')[8].innerHTML && $('td.square')[2].innerHTML)
+     console.log(' wins!')
+   else if ($('td.square')[0].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[8].innerHTML && $('td.square')[0].innerHTML)
+     console.log(' wins!')
+   else if ($('td.square')[2].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[6].innerHTML && $('td.square')[2].innerHTML)
+     console.log(' wins!')
+  changeTurn()
+}
 
 module.exports = {
   changeAlert,
   theBoard,
   changeTurn,
-  startGame
+  startGame,
+  winnerCheck
 }
 //
 // let turn = 'X'
