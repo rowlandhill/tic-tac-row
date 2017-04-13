@@ -33,7 +33,7 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (event) {
-  console.log('event fired')
+  // console.log('event fired')
   const data = getFormFields(event.target)
   event.preventDefault()
   api.signOut(data)
@@ -59,6 +59,15 @@ const onCreateGame = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onGetId = function (event) {
+  console.log(data)
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.getId(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -66,6 +75,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#get-all-games').on('submit', onGetAllGames)
   $('#create-game').on('submit', onCreateGame)
+  $('#get-id').on('submit', onGetId)
 }
 
 module.exports = {
