@@ -27,11 +27,16 @@ const startGame = () => {
 $('td.square').on('click', function () {
   if ($(this)[0].innerHTML === '') {
     $(this).text(turn)
-    changeTurn()
+    winnerCheck()
   } else {
     changeAlert('pick another square!')
   }
 })
+
+const endGame = () => {
+  changeAlert('you win!')
+  $('td.square').unbind()
+}
 
 const changeTurn = () => {
   if (turn === 'X') {
@@ -54,22 +59,21 @@ const changeTurn = () => {
 
 const winnerCheck = function () {
   if ($('td.square')[0].innerHTML === $('td.square')[1].innerHTML && $('td.square')[1].innerHTML === $('td.square')[2].innerHTML && $('td.square')[0].innerHTML)
-    // endGame()
-    console.log('win!')
+    return endGame()
   else if ($('td.square')[3].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[5].innerHTML && $('td.square')[3].innerHTML)
-     console.log(' wins!')
-   else if ($('td.square')[6].innerHTML === $('td.square')[7].innerHTML && $('td.square')[7].innerHTML === $('td.square')[8].innerHTML && $('td.square')[6].innerHTML)
-     console.log(' wins!')
-   else if ($('td.square')[0].innerHTML === $('td.square')[3].innerHTML && $('td.square')[3].innerHTML === $('td.square')[6].innerHTML && $('td.square')[0].innerHTML)
-     console.log(' wins!')
-   else if ($('td.square')[1].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[7].innerHTML && $('td.square')[1].innerHTML)
-     console.log(' wins!')
-   else if ($('td.square')[2].innerHTML === $('td.square')[5].innerHTML && $('td.square')[5].innerHTML === $('td.square')[8].innerHTML && $('td.square')[2].innerHTML)
-     console.log(' wins!')
-   else if ($('td.square')[0].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[8].innerHTML && $('td.square')[0].innerHTML)
-     console.log(' wins!')
-   else if ($('td.square')[2].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[6].innerHTML && $('td.square')[2].innerHTML)
-     console.log(' wins!')
+    return endGame()
+  else if ($('td.square')[6].innerHTML === $('td.square')[7].innerHTML && $('td.square')[7].innerHTML === $('td.square')[8].innerHTML && $('td.square')[6].innerHTML)
+    return endGame()
+  else if ($('td.square')[0].innerHTML === $('td.square')[3].innerHTML && $('td.square')[3].innerHTML === $('td.square')[6].innerHTML && $('td.square')[0].innerHTML)
+    return endGame()
+  else if ($('td.square')[1].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[7].innerHTML && $('td.square')[1].innerHTML)
+    return endGame()
+  else if ($('td.square')[2].innerHTML === $('td.square')[5].innerHTML && $('td.square')[5].innerHTML === $('td.square')[8].innerHTML && $('td.square')[2].innerHTML)
+    return endGame()
+  else if ($('td.square')[0].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[8].innerHTML && $('td.square')[0].innerHTML)
+    return endGame()
+  else if ($('td.square')[2].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[6].innerHTML && $('td.square')[2].innerHTML)
+    return endGame()
   changeTurn()
 }
 
@@ -78,7 +82,8 @@ module.exports = {
   theBoard,
   changeTurn,
   startGame,
-  winnerCheck
+  winnerCheck,
+  endGame
 }
 //
 // let turn = 'X'
