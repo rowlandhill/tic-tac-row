@@ -33,7 +33,7 @@ const changePassword = (data) => {
 }
 
 const signOut = (data) => {
-  console.log('sign out fired', data)
+  // console.log('sign out fired', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -44,10 +44,22 @@ const signOut = (data) => {
 }
 
 const getAllGames = (data) => {
-  console.log('get index', data)
+  // console.log('get index', data)
   return $.ajax({
     url: config.apiOrigin + '/games/',
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const createGame = (data) => {
+  console.log('get index', data)
+  event.preventDefault()
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -59,5 +71,6 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  getAllGames
+  getAllGames,
+  createGame
 }

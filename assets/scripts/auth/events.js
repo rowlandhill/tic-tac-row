@@ -50,12 +50,22 @@ const onGetAllGames = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onCreateGame = function (event) {
+  console.log(data)
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.createGame(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#get-all-games').on('submit', onGetAllGames)
+  $('#create-game').on('submit', onCreateGame)
 }
 
 module.exports = {
