@@ -18,6 +18,7 @@ and no additional moves can be made.  Also, no ties or illegal moves.
 - Make it look good
 
 Unsolved problems:
+- New issues: sign up, sign in, sign out: everything worked on local, but now do not work with heroku :(
 - Reset button refreshes page
 - Scores are not displayed or linked to the game
 - Certain functions that are displayed should be hidden
