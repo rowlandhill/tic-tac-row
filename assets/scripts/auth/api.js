@@ -67,11 +67,35 @@ const createGame = (data) => {
 }
 
 const getId = (data) => {
-  console.log('get index', data)
+  // console.log('get index', data)
   event.preventDefault()
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.user.id,
     method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const joinGame = (data) => {
+  // console.log('get index', data)
+  event.preventDefault()
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const gameState = (data) => {
+  console.log('get index', data)
+  event.preventDefault()
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.user.id,
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -85,5 +109,7 @@ module.exports = {
   signOut,
   getAllGames,
   createGame,
-  getId
+  getId,
+  joinGame,
+  gameState
 }

@@ -72,6 +72,20 @@
         </fieldset>
       </form>
 
+      <form id="join-game">
+        <fieldset>
+          <legend>Get ID!</legend>
+          <input type="submit" name="submit" value="Join game">
+          <input name="game[id]" type="text" value="Game ID">
+        </fieldset>
+      </form>
+
+      <form id="game-state">
+  <input name="game[cell][index]" type="text" value="0">
+  <input name="game[cell][value]" type="text" value="x">
+  <input name="game[over]" type="text" value="false">
+    </form>
+
       <div id="container">
       <div id="alert">Turns, winners, etc...</div>
     <table id="gameboard">

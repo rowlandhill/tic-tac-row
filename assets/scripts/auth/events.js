@@ -68,6 +68,24 @@ const onGetId = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onJoinGame = function (event) {
+  console.log(data)
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.joinGame(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
+const onGameState = function (event) {
+  console.log(data)
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.gameState(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -76,6 +94,8 @@ const addHandlers = () => {
   $('#get-all-games').on('submit', onGetAllGames)
   $('#create-game').on('submit', onCreateGame)
   $('#get-id').on('submit', onGetId)
+  $('#join-game').on('submit', onJoinGame)
+  $('#game-state').on('submit', onGameState)
 }
 
 module.exports = {
