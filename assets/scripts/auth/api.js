@@ -55,7 +55,7 @@ const getAllGames = (data) => {
 }
 
 const createGame = (data) => {
-  // console.log('get index', data)
+  console.log('get index', data)
   event.preventDefault()
   return $.ajax({
     url: config.apiOrigin + '/games/',

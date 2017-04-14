@@ -51,14 +51,6 @@ const gameDraw = () => {
   $('td.square').unbind()
 }
 
-// const catsGame = () => {
-//   for (let i = 1; i < 10; i++) {
-//     if (gameArray[i] === '')
-//       return false
-//   }
-//   return true
-// }
-
 const changeTurn = () => {
   if (turn === 'X') {
     turn = 'O'
@@ -94,9 +86,6 @@ const winnerCheck = function () {
     return endGame()
   }
 }
-// this needs to be uncommented once the array is in place
-// } else if (win === false)
-//   console.log('game tie')
 
 // this needs to be uncommented when you get to UI
 
