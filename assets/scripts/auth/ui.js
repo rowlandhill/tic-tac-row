@@ -5,13 +5,13 @@ const gameLogic = require('../gamelogic.js')
 
 const signUpSuccess = (data) => {
   console.log(data)
-  // $('#sign-up').addClass('hidden')
-  gameLogic.changeUiMessage('great job! now please sign in')
+  $('#sign-up').addClass('hidden')
+  gameLogic.changeUiMessage('thanks for signing up! please sign in')
 }
 
 const signUpFailure = (error) => {
   console.log(error)
-  gameLogic.changeUiMessage('user name taken, or passwords didn\'t match - try again!')
+  gameLogic.changeUiMessage('user name taken, or passwords didn\'t match - please try again!')
 }
 
 const signInSuccess = (data) => {
@@ -23,6 +23,7 @@ const signInSuccess = (data) => {
   $('#sign-out').removeClass('hidden')
   $('#get-all-games').removeClass('hidden')
   $('#create-game').removeClass('hidden')
+  $('#get-id').removeClass('hidden')
   if ($('#sign-up').not('hidden')) {
     $('#sign-up').addClass('hidden')
   }
@@ -30,7 +31,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = (error) => {
   console.error(error)
-  gameLogic.changeUiMessage('name or password don\'t match - try again!')
+  gameLogic.changeUiMessage('you either haven\'t signed up yet, or you typed something wrong - please try again!')
 }
 
 const changePasswordSuccess = (response) => {
@@ -53,15 +54,33 @@ const signOutSuccess = (response) => {
   $('#get-all-games').addClass('hidden')
   $('#container').addClass('hidden')
   $('#create-game').addClass('hidden')
+  $('#alert').addClass('hidden')
 }
 
 const signOutFailure = (error) => {
   console.error(error)
 }
 
-const getAllGamesSuccess = (response) => {
-  console.log('response is', response)
+const getAllGamesSuccess = (data) => {
+  console.log(data)
+  $('#all-games').text(data.games.length + ' games so far!')
 }
+
+// $('.game-list').html('')
+//  const games = data.games
+//  const gameList = $('ul.game-list')
+//  games.forEach((g) => {
+//    const li = $('<li/>')
+//        .addClass('ui-menu-item')
+//        .attr('role', 'menuitem')
+//        .appendTo(gameList)
+//    const link = $('<span/>')
+//        .addClass('ui-all')
+//        .text('game id ' + g.id)
+//        .appendTo(li)
+//  })
+//  $('#display-stats').text('You have played ' + data.games.length + ' games of tic tac toe so far! These are the Ids for each game.')
+// }
 
 const getAllGamesFailure = (error) => {
   console.error(error)
@@ -69,16 +88,23 @@ const getAllGamesFailure = (error) => {
 
 const createGameSuccess = (response) => {
   console.log('response is', response)
+  gameLogic.resetBoard()
   gameLogic.changeUiMessage('FIGHT!')
   $('#container').removeClass('hidden')
+  $('#alert').removeClass('hidden')
 }
 
 const createGameFailure = (error) => {
   console.error(error)
 }
 
-const getIdSuccess = (response) => {
-  console.log('response is', response)
+const getIdSuccess = (data) => {
+  console.log(data)
+  if (data.game.over) {
+    $('#picked-game').text('you finished game ID ' + data.game.id)
+  } else {
+    $('#picked-game').text('what happened? you didn\'t finish game ID ' + data.game.id)
+  }
 }
 
 const getIdFailure = (error) => {

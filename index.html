@@ -35,6 +35,41 @@
         </fieldset>
       </form>
 
+      <form id="create-game" class="hidden">
+        <fieldset>
+          <legend>Create game!</legend>
+          <input type="submit" name="submit" value="Create game">
+        </fieldset>
+      </form>
+
+        <div id="alert" class="hidden">New game! X always starts</div>
+        <div id="container" class="hidden">
+
+        <br>
+        <br>
+
+      <table id="gameboard">
+        <tr>
+          <td class="square" data-square="0"></td>
+          <td class="square" data-square="1"></td>
+          <td class="square" data-square="2"></td>
+        </tr>
+        <tr>
+          <td class="square" data-square="3"></td>
+          <td class="square" data-square="4"></td>
+          <td class="square" data-square="5"></td>
+        </tr>
+        <tr>
+          <td class="square" data-square="6"></td>
+          <td class="square" data-square="7"></td>
+          <td class="square" data-square="8"></td>
+        </tr>
+      </table>
+      </div>
+
+      <br>
+      <br>
+
       <form id="change-password" class="hidden">
         <fieldset>
           <legend>Change Password!</legend>
@@ -55,14 +90,16 @@
         <fieldset>
           <legend>Get all games!</legend>
           <input type="submit" name="submit" value="Get all games">
+          <div id="all-games"></div>
         </fieldset>
       </form>
 
       <form id="get-id" class="hidden">
         <fieldset>
-          <legend>Get ID!</legend>
+          <legend>Get Game ID!</legend>
           <input type="submit" name="submit" value="Get ID">
           <input name="game[id]" type="text" value="Game ID">
+          <div id="picked-game"></div>
         </fieldset>
       </form>
 
@@ -79,38 +116,6 @@
   <input name="game[cell][value]" type="text" value="x">
   <input name="game[over]" type="text" value="false">
     </form> -->
-
-    <form id="create-game" class="hidden">
-      <fieldset>
-        <legend>Create game!</legend>
-        <input type="submit" name="submit" value="Create game">
-      </fieldset>
-    </form>
-
-      <div id="container" class="hidden">
-      <div id="alert">New game!  X always starts</div>
-
-      <br>
-      <br>
-
-    <table id="gameboard">
-      <tr>
-        <td class="square" data-square="0"></td>
-        <td class="square" data-square="1"></td>
-        <td class="square" data-square="2"></td>
-      </tr>
-      <tr>
-        <td class="square" data-square="3"></td>
-        <td class="square" data-square="4"></td>
-        <td class="square" data-square="5"></td>
-      </tr>
-      <tr>
-        <td class="square" data-square="6"></td>
-        <td class="square" data-square="7"></td>
-        <td class="square" data-square="8"></td>
-      </tr>
-    </table>
-    </div>
 
     </body>
 </html>
