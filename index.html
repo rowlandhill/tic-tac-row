@@ -14,6 +14,7 @@
     </head>
     <body class="container-fluid">
       <h1>Tic Tac Row</h1>
+      <h4 id="ui-message">Welcome!  Please sign up, if you haven't already, or sign in if you have!</h4>
 
       <form id="sign-up">
         <fieldset>
@@ -24,7 +25,7 @@
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
-
+<br>
       <form id="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
@@ -34,7 +35,7 @@
         </fieldset>
       </form>
 
-      <form id="change-password">
+      <form id="change-password" class="hidden">
         <fieldset>
           <legend>Change Password!</legend>
           <input type="password" name="passwords[old]" placeholder="old password">
@@ -43,28 +44,21 @@
         </fieldset>
       </form>
 
-      <form id="sign-out">
+      <form id="sign-out" class="hidden">
         <fieldset>
           <legend>Sign out!</legend>
           <input type="submit" name="submit" value="Sign out!">
         </fieldset>
       </form>
 
-      <form id="get-all-games">
+      <form id="get-all-games" class="hidden">
         <fieldset>
           <legend>Get all games!</legend>
           <input type="submit" name="submit" value="Get all games">
         </fieldset>
       </form>
 
-      <form id="create-game">
-        <fieldset>
-          <legend>Create game!</legend>
-          <input type="submit" name="submit" value="Create game">
-        </fieldset>
-      </form>
-
-      <form id="get-id">
+      <form id="get-id" class="hidden">
         <fieldset>
           <legend>Get ID!</legend>
           <input type="submit" name="submit" value="Get ID">
@@ -72,7 +66,7 @@
         </fieldset>
       </form>
 
-      <form id="join-game">
+      <!-- <form id="join-game" class="hidden">
         <fieldset>
           <legend>Get ID!</legend>
           <input type="submit" name="submit" value="Join game">
@@ -80,19 +74,20 @@
         </fieldset>
       </form>
 
-      <form id="game-state">
+      <form id="game-state" class="hidden">
   <input name="game[cell][index]" type="text" value="0">
   <input name="game[cell][value]" type="text" value="x">
   <input name="game[over]" type="text" value="false">
-    </form>
+    </form> -->
 
-    <form id="reset">
+    <form id="create-game" class="hidden">
       <fieldset>
-    <input type="submit" name="submit" value="New Game!">
-    </fieldset>
+        <legend>Create game!</legend>
+        <input type="submit" name="submit" value="Create game">
+      </fieldset>
     </form>
 
-      <div id="container">
+      <div id="container" class="hidden">
       <div id="alert">New game!  X always starts</div>
 
       <br>
