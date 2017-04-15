@@ -54,6 +54,7 @@ const onCreateGame = function (event) {
   console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
+  $('#container').removeClass('hidden')
   api.createGame(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

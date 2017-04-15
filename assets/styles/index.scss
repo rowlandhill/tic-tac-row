@@ -15,32 +15,36 @@ h3 {
   border-bottom: 1px solid black
 }
 
-#sign-up {
+#ui-message {
+  text-align: center;
+}
 
+#sign-up {
+  text-align: left;
 }
 
 #sign-in {
-
+  text-align: right;
 }
 
 #change-password {
-
+  text-align: right;
 }
 
 #sign-out {
-
+  text-align: right;
 }
 
 #get-all-games {
-
+  text-align: left;
 }
 
 #create-game {
-
+  text-align: left;
 }
 
 #get-id {
-
+  text-align: left;
 }
 
 .hidden {

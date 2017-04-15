@@ -14,7 +14,14 @@
     </head>
     <body class="container-fluid">
       <h1>Tic Tac Row</h1>
-      <h3 id="ui-message">Please sign up if you haven't already, or sign in!</h3>
+      <h5 id="ui-message">Please sign up if you haven't already, or sign in!</h5>
+
+      <form id="sign-out">
+        <fieldset>
+          <legend>Sign out!</legend>
+          <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
 
       <form id="sign-up">
         <fieldset>
@@ -35,7 +42,7 @@
         </fieldset>
       </form>
 
-      <form id="change-password" class="hidden">
+      <form id="change-password">
         <fieldset>
           <legend>Change Password!</legend>
           <input type="password" name="passwords[old]" placeholder="old password">
@@ -44,28 +51,14 @@
         </fieldset>
       </form>
 
-      <form id="sign-out" class="hidden">
-        <fieldset>
-          <legend>Sign out!</legend>
-          <input type="submit" name="submit" value="Sign out!">
-        </fieldset>
-      </form>
-
-      <form id="get-all-games" class="hidden">
+      <form id="get-all-games">
         <fieldset>
           <legend>Get all games!</legend>
           <input type="submit" name="submit" value="Get all games">
         </fieldset>
       </form>
 
-      <form id="create-game" class="hidden">
-        <fieldset>
-          <legend>Create game!</legend>
-          <input type="submit" name="submit" value="Create game">
-        </fieldset>
-      </form>
-
-      <form id="get-id" class="hidden">
+      <form id="get-id">
         <fieldset>
           <legend>Get ID!</legend>
           <input type="submit" name="submit" value="Get ID">
@@ -86,6 +79,13 @@
   <input name="game[cell][value]" type="text" value="x">
   <input name="game[over]" type="text" value="false">
     </form> -->
+
+    <form id="create-game">
+      <fieldset>
+        <legend>Create game!</legend>
+        <input type="submit" name="submit" value="Create game">
+      </fieldset>
+    </form>
 
       <div id="container" class="hidden">
       <div id="alert">X always starts</div>
