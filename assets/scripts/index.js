@@ -20,6 +20,6 @@ $(() => {
   authEvents.addHandlers()
 })
 
-const gameLogic = require('./gameLogic.js')
+const gameLogic = require('./gamelogic.js')
 
 console.log(gameLogic)

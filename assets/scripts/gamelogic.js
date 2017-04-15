@@ -20,6 +20,11 @@ const changeAlert = (txt) => {
   $(element).text(txt)
 }
 
+const changeUiMessage = (txt) => {
+  const uimessage = $('#ui-message')[0]
+  $(uimessage).text(txt)
+}
+
 const startGame = () => {
   changeAlert(turn + ' always starts first')
 }
@@ -114,5 +119,6 @@ module.exports = {
   startGame,
   winnerCheck,
   endGame,
-  gameDraw
+  gameDraw,
+  changeUiMessage
 }
