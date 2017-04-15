@@ -1,9 +1,10 @@
 'use strict'
 
 const store = require('../store.js')
+const gameLogic = require('../gamelogic.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
+  gameLogic.changeUiMessage('great job! now please sign in')
 }
 
 const signUpFailure = (error) => {
