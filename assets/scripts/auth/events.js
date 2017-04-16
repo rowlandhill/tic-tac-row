@@ -86,6 +86,15 @@ const onGameState = function (event) {
     .catch(ui.gameStateFailure)
 }
 
+// const myTabs = () => {
+//   $('#myTabs a[href="#sign-up"]').tab('show')
+//   $('#myTabs a[href="#sign-in"]').tab('show')
+//   $('#myTabs a[href="#change-password"]').tab('show')
+//   $('#myTabs a[href="#get-all-games"]').tab('show')
+//   $('#myTabs a[href="#get-id"]').tab('show')
+//   $('#myTabs a[href="#sign-out"]').tab('show')
+// }
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
