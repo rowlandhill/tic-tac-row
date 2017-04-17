@@ -14,6 +14,14 @@
     </head>
     <body class="container-fluid">
       <h1>Tic Tac Row</h1>
+      <h5 id="ui-message">Please sign up if you haven't already, or sign in!</h5>
+
+      <form id="sign-out">
+        <fieldset>
+          <legend>Sign out!</legend>
+          <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
 
       <form id="sign-up">
         <fieldset>
@@ -43,24 +51,10 @@
         </fieldset>
       </form>
 
-      <form id="sign-out">
-        <fieldset>
-          <legend>Sign out!</legend>
-          <input type="submit" name="submit" value="Sign out!">
-        </fieldset>
-      </form>
-
       <form id="get-all-games">
         <fieldset>
           <legend>Get all games!</legend>
           <input type="submit" name="submit" value="Get all games">
-        </fieldset>
-      </form>
-
-      <form id="create-game">
-        <fieldset>
-          <legend>Create game!</legend>
-          <input type="submit" name="submit" value="Create game">
         </fieldset>
       </form>
 
@@ -72,18 +66,25 @@
         </fieldset>
       </form>
 
-      <form id="join-game">
+      <!-- <form id="join-game">
         <fieldset>
           <legend>Get ID!</legend>
           <input type="submit" name="submit" value="Join game">
           <input name="game[id]" type="text" value="Game ID">
         </fieldset>
-      </form>
+      </form> -->
 
-      <form id="game-state">
+      <!-- <form id="game-state">
   <input name="game[cell][index]" type="text" value="0">
   <input name="game[cell][value]" type="text" value="x">
   <input name="game[over]" type="text" value="false">
+    </form> -->
+
+    <form id="create-game">
+      <fieldset>
+        <legend>Create game!</legend>
+        <input type="submit" name="submit" value="Create game">
+      </fieldset>
     </form>
 
     <form id="reset">
@@ -92,7 +93,8 @@
     </fieldset>
     </form>
 
-      <div id="container">
+      <div id="container" class="hidden">
+      <div id="alert">X always starts</div>
 
       <br>
       <br>
