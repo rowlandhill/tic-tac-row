@@ -14,7 +14,7 @@
       <!-- <script src="assets/scripts/gamelogic.js"></script> -->
     </head>
     <body class="container-fluid">
-      <h1>Tic Tac Row</h1>
+      <h1>tic tac row</h1>
       <p id="ui-message">Welcome!  Please sign up, if you haven't already, or sign in if you have!</p>
 
       <form id="sign-up">
@@ -37,10 +37,7 @@
       </form>
 
       <form id="create-game" class="hidden">
-        <fieldset>
-          <legend>Create game!</legend>
           <input type="submit" name="submit" value="Create game">
-        </fieldset>
       </form>
 
         <div id="alert" class="hidden">New game! X always starts</div>
@@ -71,38 +68,37 @@
       <br>
       <br>
 
-      <form id="change-password" class="hidden">
-        <fieldset>
-          <legend>Change Password!</legend>
+        <form id="change-password" class="hidden">
+          <input type="submit" name="submit" value="change password">
           <input type="password" name="passwords[old]" placeholder="old password">
           <input type="password" name="passwords[new]" placeholder="new password">
-          <input type="submit" name="submit" value="Change Password!">
-        </fieldset>
-      </form>
+        </form>
 
-      <form id="sign-out" class="hidden">
-        <fieldset>
-          <legend>Sign out!</legend>
-          <input type="submit" name="submit" value="Sign out!">
-        </fieldset>
-      </form>
+        <br>
 
-      <form id="get-all-games" class="hidden">
-        <fieldset>
-          <legend>Get all games!</legend>
-          <input type="submit" name="submit" value="Get all games">
+        <form id="sign-out" class="hidden">
+          <input type="submit" name="submit" value="sign out">
+        </form>
+
+        <br>
+
+        <form id="get-all-games" class="hidden">
+          <input type="submit" name="submit" value="how many games have i played?">
           <div id="all-games"></div>
-        </fieldset>
-      </form>
+        </form>
 
-      <form id="get-id" class="hidden">
-        <fieldset>
-          <legend>Get Game ID!</legend>
+        <br>
+
+        <form id="get-id" class="hidden">
+        <p>get game by id</p>
           <input type="submit" name="submit" value="Get ID">
-          <input name="game[id]" type="text" value="Game ID">
+          <input name="game[id]" type="text" placeholder="game id">
           <div id="picked-game"></div>
-        </fieldset>
-      </form>
+        </form>
+
+      <br>
+      <br>
+      <br>
 
       <!-- <form id="join-game" class="hidden">
         <fieldset>

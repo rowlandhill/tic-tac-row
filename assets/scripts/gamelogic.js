@@ -1,5 +1,7 @@
 'use strict'
 
+const apiUpdate = require('../scripts/auth/api.js')
+
 let turn = 'X'
 let win = false
 let moves = 0
@@ -36,6 +38,7 @@ $('td.square').on('click', function () {
     $(this).text(turn)
     gameArray[($(this).data('square'))] = turn
     console.log(gameArray)
+    apiUpdate.gameState(gameArray, turn, win)
     winnerCheck()
   } else {
     changeAlert('pick another square, dummy!')
@@ -47,8 +50,10 @@ const endGame = () => {
     gameDraw()
   else {
     changeAlert(turn + ' wins!')
-    $('td.square').off('click')
+    $('#container').addClass('hidden')
+    // $('td.square').off('click')
   }
+  apiUpdate.gameState(gameArray, turn, win)
 }
 
 const resetBoard = () => {
@@ -57,13 +62,15 @@ const resetBoard = () => {
   turn = 'X'
   moves = 0
   win = false
+  $('#container').removeClass('hidden')
   $('td.square').on('click', startGame())
   $('td.square').text('')
 }
 
 const gameDraw = () => {
   changeAlert('a tie? boooooo! go home and think about what you\'ve done.')
-  $('td.square').unbind('click')
+  $('#container').removeClass('hidden')
+  // $('td.square').unbind('click')
 }
 
 const changeTurn = () => {

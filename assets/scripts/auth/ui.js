@@ -47,6 +47,7 @@ const changePasswordFailure = (error) => {
 const signOutSuccess = (response) => {
   console.log('response is', response)
   gameLogic.changeUiMessage('thanks for playing! please log in again if you\'d like to play again!')
+  gameLogic.resetBoard()
   $('#sign-up').removeClass('hidden')
   $('#sign-in').removeClass('hidden')
   $('#change-password').addClass('hidden')
@@ -66,32 +67,17 @@ const getAllGamesSuccess = (data) => {
   $('#all-games').text(data.games.length + ' games so far!')
 }
 
-// $('.game-list').html('')
-//  const games = data.games
-//  const gameList = $('ul.game-list')
-//  games.forEach((g) => {
-//    const li = $('<li/>')
-//        .addClass('ui-menu-item')
-//        .attr('role', 'menuitem')
-//        .appendTo(gameList)
-//    const link = $('<span/>')
-//        .addClass('ui-all')
-//        .text('game id ' + g.id)
-//        .appendTo(li)
-//  })
-//  $('#display-stats').text('You have played ' + data.games.length + ' games of tic tac toe so far! These are the Ids for each game.')
-// }
-
 const getAllGamesFailure = (error) => {
   console.error(error)
 }
 
-const createGameSuccess = (response) => {
-  console.log('response is', response)
+const createGameSuccess = (data) => {
   gameLogic.resetBoard()
   gameLogic.changeUiMessage('FIGHT!')
   $('#container').removeClass('hidden')
   $('#alert').removeClass('hidden')
+  store.game = data.game
+  console.log(data.game)
 }
 
 const createGameFailure = (error) => {
@@ -99,12 +85,7 @@ const createGameFailure = (error) => {
 }
 
 const getIdSuccess = (data) => {
-  console.log(data)
-  if (data.game.over) {
-    $('#picked-game').text('you finished game ID ' + data.game.id)
-  } else {
-    $('#picked-game').text('what happened? you didn\'t finish game ID ' + data.game.id)
-  }
+  console.log(data.game.id)
 }
 
 const getIdFailure = (error) => {
@@ -124,7 +105,7 @@ const gameStateSuccess = (response) => {
 }
 
 const gameStateFailure = (error) => {
-  console.error(error)
+  console.error('uh what' + error)
 }
 
 module.exports = {
