@@ -43,7 +43,7 @@ const signOut = (data) => {
   })
 }
 
-const getAllGames = (data) => {
+const getAllGames = () => {
   // console.log('get index', data)
   return $.ajax({
     url: config.apiOrigin + '/games/',
@@ -55,7 +55,6 @@ const getAllGames = (data) => {
 }
 
 const createGame = (data) => {
-  console.log('get index', data)
   event.preventDefault()
   return $.ajax({
     url: config.apiOrigin + '/games/',
@@ -66,11 +65,12 @@ const createGame = (data) => {
   })
 }
 
-const getId = (data) => {
-  // console.log('get index', data)
+const getId = () => {
   event.preventDefault()
+  console.log('AHHHHHHH ' + store.game.id)
+  // put a console log here for something
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.user.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -79,7 +79,6 @@ const getId = (data) => {
 }
 
 const joinGame = (data) => {
-  // console.log('get index', data)
   event.preventDefault()
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.user.id,
@@ -90,14 +89,23 @@ const joinGame = (data) => {
   })
 }
 
-const gameState = (data) => {
-  console.log('get index', data)
+const updateGame = (gameArray, turn, win) => {
+  console.log(gameArray, turn, win)
   event.preventDefault()
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.user.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      game: {
+        cell: {
+          index: gameArray,
+          value: turn
+        },
+        over: win
+      }
     }
   })
 }
@@ -111,5 +119,5 @@ module.exports = {
   createGame,
   getId,
   joinGame,
-  gameState
+  updateGame
 }

@@ -7,21 +7,16 @@
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
       <link rel="stylesheet" href="assets/styles/index.scss">
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
       <!-- <script src="assets/scripts/gamelogic.js"></script> -->
     </head>
     <body class="container-fluid">
-      <h1>Tic Tac Row</h1>
-      <h5 id="ui-message">Please sign up if you haven't already, or sign in!</h5>
 
-      <form id="sign-out">
-        <fieldset>
-          <legend>Sign out!</legend>
-          <input type="submit" name="submit" value="Sign out!">
-        </fieldset>
-      </form>
+      <h1>tic tac row</h1>
+      <p id="ui-message">Welcome!  Please sign up, if you haven't already, or sign in if you have!</p>
 
       <form id="sign-up">
         <fieldset>
@@ -32,7 +27,7 @@
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
-
+<br>
       <form id="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
@@ -42,50 +37,81 @@
         </fieldset>
       </form>
 
-      <form id="change-password">
-        <fieldset>
-          <legend>Change Password!</legend>
+      <form id="game_info" class="hidden">
+     <input id="index_form" name="game[cell][index]" type="text" value="0">
+     <input id="move_marker_form" name="game[cell][value]" type="text" value="x">
+     <input id="game_over_form" name="game[over]" type="text" value="false">
+      </form>
+
+      <br>
+
+      <form id="create-game" class="hidden">
+          <input type="submit" name="submit" value="Create game">
+      </form>
+
+      <br>
+
+        <div id="alert" class="hidden">New game! X always starts</div>
+        <div id="container" class="hidden">
+
+        <br>
+        <br>
+
+      <table id="gameboard">
+        <tr>
+          <td class="square" data-square="0"></td>
+          <td class="square" data-square="1"></td>
+          <td class="square" data-square="2"></td>
+        </tr>
+        <tr>
+          <td class="square" data-square="3"></td>
+          <td class="square" data-square="4"></td>
+          <td class="square" data-square="5"></td>
+        </tr>
+        <tr>
+          <td class="square" data-square="6"></td>
+          <td class="square" data-square="7"></td>
+          <td class="square" data-square="8"></td>
+        </tr>
+      </table>
+      </div>
+
+      <br>
+      <br>
+
+      <form id="sign-out" class="hidden">
+        <input type="submit" name="submit" value="sign out">
+      </form>
+
+        <br>
+
+        <form id="change-password" class="hidden">
+          <input type="submit" name="submit" value="change password">
           <input type="password" name="passwords[old]" placeholder="old password">
           <input type="password" name="passwords[new]" placeholder="new password">
-          <input type="submit" name="submit" value="Change Password!">
-        </fieldset>
-      </form>
+        </form>
 
-      <form id="get-all-games">
-        <fieldset>
-          <legend>Get all games!</legend>
-          <input type="submit" name="submit" value="Get all games">
-        </fieldset>
-      </form>
+        <br>
 
-      <form id="get-id">
-        <fieldset>
-          <legend>Get ID!</legend>
+        <form id="get-all-games" class="hidden">
+          <input type="submit" name="submit" value="how many games have i played?">
+        </form>
+        <br>
+          <div id="all-games"></div>
+
+        <br>
+
+        <form id="get-id" class="hidden">
+        <p>get game by id</p>
+
           <input type="submit" name="submit" value="Get ID">
-          <input name="game[id]" type="text" value="Game ID">
-        </fieldset>
-      </form>
+          <input name="game[id]" type="text" placeholder="game id">
+          <div id="picked-game"></div>
+        </form>
 
-      <!-- <form id="join-game">
-        <fieldset>
-          <legend>Get ID!</legend>
-          <input type="submit" name="submit" value="Join game">
-          <input name="game[id]" type="text" value="Game ID">
-        </fieldset>
-      </form> -->
-
-      <!-- <form id="game-state">
-  <input name="game[cell][index]" type="text" value="0">
-  <input name="game[cell][value]" type="text" value="x">
-  <input name="game[over]" type="text" value="false">
-    </form> -->
-
-    <form id="create-game">
-      <fieldset>
-        <legend>Create game!</legend>
-        <input type="submit" name="submit" value="Create game">
-      </fieldset>
-    </form>
+      <br>
+      <br>
+      <br>
 
     <form id="reset">
       <fieldset>
@@ -93,38 +119,6 @@
     </fieldset>
     </form>
 
-      <div id="container" class="hidden">
-      <div id="alert">X always starts</div>
-
-      <br>
-      <br>
-      <br>
-
-      <div id="alert">New game!  X always starts</div>
-
-      <br>
-      <br>
-
-    <table id="gameboard">
-      <tr>
-        <td class="square" data-square="0"></td>
-        <td class="square" data-square="1"></td>
-        <td class="square" data-square="2"></td>
-      </tr>
-
-      <tr>
-        <td class="square" data-square="3"></td>
-        <td class="square" data-square="4"></td>
-        <td class="square" data-square="5"></td>
-      </tr>
-
-      <tr>
-        <td class="square" data-square="6"></td>
-        <td class="square" data-square="7"></td>
-        <td class="square" data-square="8"></td>
-      </tr>
-    </table>
-    </div>
 
     <br>
     <br>

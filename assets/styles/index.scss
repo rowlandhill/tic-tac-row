@@ -1,102 +1,91 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-
 body {
   width: 700px;
   margin: auto;
+  font-family: 'Raleway', sans-serif;
+  background-color: #d6d6d6;
 }
+
 h1 {
   text-align: center;
-  font-family: sans-serif;
 }
 
 h3 {
-  border-bottom: 1px solid black
-}
-
-#ui-message {
-  text-align: center;
-}
-
-#sign-up {
-  text-align: left;
-}
-
-#sign-in {
-  text-align: right;
-}
-
-#change-password {
-  text-align: right;
-}
-
-#sign-out {
-  text-align: right;
-}
-
-#get-all-games {
-  text-align: left;
-}
-
-#create-game {
-  text-align: left;
-}
-
-#get-id {
-  text-align: left;
+  border-bottom: 1px solid black;
 }
 
 .hidden {
   visibility: hidden;
 }
 
-#alert {
-  text-align: center;
-  font-size: 25px;
-}
+  p {
+    font-size: 15px;
+  }
 
-#container {
-  width: 400px;
-  height: 400px;
-  display: block;
-  position: relative;
-  margin: 25px auto;
-}
+  #ui-message {
+    text-align: center;
+    color: red;
+  }
 
-.square {
-  font-size: 50px;
-  font-family: sans-serif;
-  color: black;
-}
+  #create-game {
+    text-align: center;
+  }
 
-table {
-  width: 405px;
-  height: 405px;
-}
+  #sign-out {
+    text-align: center;
+  }
 
-td {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  vertical-align: middle;
-}
+  #alert {
+    text-align: center;
+    font-size: 25px;
+  }
 
-td[data-square="1"], td[data-square="7"] {
-  border-left: 2px solid gray;
-  border-right: 2px solid gray;
-}
+  #all-games {
+    color: blue;
+  }
 
-td[data-square="3"], td[data-square="5"] {
-  border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
-}
+  #container {
+    width: 400px;
+    height: 400px;
+    display: block;
+    position: relative;
+    margin: 25px auto;
+  }
 
-td[data-square="4"] {
-  border: 2px solid gray;
-}
+  .square {
+    font-size: 50px;
+    color: black;
+  }
+
+  table {
+    width: 405px;
+    height: 405px;
+  }
+
+  td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  td[data-square="1"], td[data-square="7"] {
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+  }
+
+  td[data-square="3"], td[data-square="5"] {
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+  }
+
+  td[data-square="4"] {
+    border: 2px solid gray;
+  }
 
 #reset {
-  padding-top: 10px;
-  text-align: center;
-}
+    padding-top: 10px;
+    text-align: center;
+  }

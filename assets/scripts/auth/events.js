@@ -46,8 +46,8 @@ const onGetAllGames = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.getAllGames(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+    .then(ui.getAllGamesSuccess)
+    .catch(ui.getAllGamesFailure)
 }
 
 const onCreateGame = function (event) {
@@ -56,8 +56,8 @@ const onCreateGame = function (event) {
   event.preventDefault()
   $('#container').removeClass('hidden')
   api.createGame(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
 }
 
 const onGetId = function (event) {
@@ -65,8 +65,8 @@ const onGetId = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.getId(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+    .then(ui.getIdSuccess)
+    .catch(ui.getIdFailure)
 }
 
 const onJoinGame = function (event) {
@@ -74,18 +74,27 @@ const onJoinGame = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   api.joinGame(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+    .then(ui.joinGameSuccess)
+    .catch(ui.joinGameFailure)
 }
 
-const onGameState = function (event) {
+const onUpdateGame = function (event) {
   console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
-  api.gameState(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
+  api.updateGame(data)
+    .then(ui.gameStateSuccess)
+    .catch(ui.gameStateFailure)
 }
+
+// const myTabs = () => {
+//   $('#myTabs a[href="#sign-up"]').tab('show')
+//   $('#myTabs a[href="#sign-in"]').tab('show')
+//   $('#myTabs a[href="#change-password"]').tab('show')
+//   $('#myTabs a[href="#get-all-games"]').tab('show')
+//   $('#myTabs a[href="#get-id"]').tab('show')
+//   $('#myTabs a[href="#sign-out"]').tab('show')
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -96,7 +105,7 @@ const addHandlers = () => {
   $('#create-game').on('submit', onCreateGame)
   $('#get-id').on('submit', onGetId)
   $('#join-game').on('submit', onJoinGame)
-  $('#game-state').on('submit', onGameState)
+  $('td-square').on('click', onUpdateGame)
 }
 
 module.exports = {

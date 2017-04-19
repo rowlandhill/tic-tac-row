@@ -1,19 +1,21 @@
 'use strict'
 
+const apiUpdate = require('../scripts/auth/api.js')
+
 let turn = 'X'
 let win = false
 let moves = 0
 let gameArray = ['', '', '', '', '', '', '', '', '']
-const winningCombos = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
-]
+// const winningCombos = [
+//   [0, 1, 2],
+//   [3, 4, 5],
+//   [6, 7, 8],
+//   [0, 3, 6],
+//   [1, 4, 7],
+//   [2, 5, 8],
+//   [0, 4, 8],
+//   [2, 4, 6]
+// ]
 
 const changeAlert = (txt) => {
   const element = $('#alert')[0]
@@ -36,6 +38,9 @@ $('td.square').on('click', function () {
     $(this).text(turn)
     gameArray[($(this).data('square'))] = turn
     console.log(gameArray)
+    $('#move_marker_form').val(turn)
+    $('#index_form').val(+$(this).attr('id'))
+    apiUpdate.updateGame(gameArray, turn, win)
     winnerCheck()
   } else {
     changeAlert('pick another square, dummy!')
@@ -43,17 +48,33 @@ $('td.square').on('click', function () {
 })
 
 const endGame = () => {
-  if (moves === 9 && win === false)
+  if (moves === 9 && win === false) {
     gameDraw()
-  else {
+  } else {
     changeAlert(turn + ' wins!')
-    $('td.square').unbind()
+    $('#container').addClass('hidden')
+    $('#ui-message').text('')
+    $('#game_over_form').val('true')
+    // $('td.square').off('click')
   }
+  apiUpdate.updateGame(gameArray, turn, win)
+}
+
+const resetBoard = () => {
+  startGame()
+  gameArray = ['', '', '', '', '', '', '', '', '']
+  turn = 'X'
+  moves = 0
+  win = false
+  $('#container').removeClass('hidden')
+  $('td.square').on('click', startGame())
+  $('td.square').text('')
 }
 
 const gameDraw = () => {
   changeAlert('a tie? boooooo! go home and think about what you\'ve done.')
-  $('td.square').unbind()
+  $('#container').addClass('hidden')
+  // $('td.square').unbind('click')
 }
 
 const changeTurn = () => {
@@ -68,25 +89,25 @@ const changeTurn = () => {
 }
 
 const winnerCheck = function () {
-  if ($('td.square')[0].innerHTML === $('td.square')[1].innerHTML && $('td.square')[1].innerHTML === $('td.square')[2].innerHTML && $('td.square')[0].innerHTML)
+  if ($('td.square')[0].innerHTML === $('td.square')[1].innerHTML && $('td.square')[1].innerHTML === $('td.square')[2].innerHTML && $('td.square')[0].innerHTML) {
     win = true
-  else if ($('td.square')[3].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[5].innerHTML && $('td.square')[3].innerHTML)
+  } else if ($('td.square')[3].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[5].innerHTML && $('td.square')[3].innerHTML) {
     win = true
-  else if ($('td.square')[6].innerHTML === $('td.square')[7].innerHTML && $('td.square')[7].innerHTML === $('td.square')[8].innerHTML && $('td.square')[6].innerHTML)
+  } else if ($('td.square')[6].innerHTML === $('td.square')[7].innerHTML && $('td.square')[7].innerHTML === $('td.square')[8].innerHTML && $('td.square')[6].innerHTML) {
     win = true
-  else if ($('td.square')[0].innerHTML === $('td.square')[3].innerHTML && $('td.square')[3].innerHTML === $('td.square')[6].innerHTML && $('td.square')[0].innerHTML)
+  } else if ($('td.square')[0].innerHTML === $('td.square')[3].innerHTML && $('td.square')[3].innerHTML === $('td.square')[6].innerHTML && $('td.square')[0].innerHTML) {
     win = true
-  else if ($('td.square')[1].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[7].innerHTML && $('td.square')[1].innerHTML)
+  } else if ($('td.square')[1].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[7].innerHTML && $('td.square')[1].innerHTML) {
     win = true
-  else if ($('td.square')[2].innerHTML === $('td.square')[5].innerHTML && $('td.square')[5].innerHTML === $('td.square')[8].innerHTML && $('td.square')[2].innerHTML)
+  } else if ($('td.square')[2].innerHTML === $('td.square')[5].innerHTML && $('td.square')[5].innerHTML === $('td.square')[8].innerHTML && $('td.square')[2].innerHTML) {
     win = true
-  else if ($('td.square')[0].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[8].innerHTML && $('td.square')[0].innerHTML)
+  } else if ($('td.square')[0].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[8].innerHTML && $('td.square')[0].innerHTML) {
     win = true
-  else if ($('td.square')[2].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[6].innerHTML && $('td.square')[2].innerHTML)
+  } else if ($('td.square')[2].innerHTML === $('td.square')[4].innerHTML && $('td.square')[4].innerHTML === $('td.square')[6].innerHTML && $('td.square')[2].innerHTML) {
     win = true
-  else (
+  } else {
     changeTurn()
-  )
+  }
   if (win === true || moves === 9) {
     return endGame()
   }
@@ -109,5 +130,6 @@ module.exports = {
   winnerCheck,
   endGame,
   gameDraw,
-  changeUiMessage
+  changeUiMessage,
+  resetBoard
 }
