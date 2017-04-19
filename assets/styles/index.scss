@@ -6,6 +6,7 @@ body {
   width: 700px;
   margin: auto;
   font-family: 'Raleway', sans-serif;
+  background-color: #d6d6d6;
 }
 h1 {
   text-align: center;
@@ -21,11 +22,24 @@ p {
 
 #ui-message {
   text-align: center;
+  color: red;
+}
+
+#create-game {
+  text-align: center;
+}
+
+#sign-out {
+  text-align: center;
 }
 
 #alert {
   text-align: center;
   font-size: 25px;
+}
+
+#all-games {
+  color: blue;
 }
 
 #container {

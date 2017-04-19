@@ -36,9 +36,19 @@
         </fieldset>
       </form>
 
+      <form id="game_info" class="hidden">
+     <input id="index_form" name="game[cell][index]" type="text" value="0">
+     <input id="move_marker_form" name="game[cell][value]" type="text" value="x">
+     <input id="game_over_form" name="game[over]" type="text" value="false">
+      </form>
+
+      <br>
+
       <form id="create-game" class="hidden">
           <input type="submit" name="submit" value="Create game">
       </form>
+
+      <br>
 
         <div id="alert" class="hidden">New game! X always starts</div>
         <div id="container" class="hidden">
@@ -68,6 +78,12 @@
       <br>
       <br>
 
+      <form id="sign-out" class="hidden">
+        <input type="submit" name="submit" value="sign out">
+      </form>
+
+        <br>
+
         <form id="change-password" class="hidden">
           <input type="submit" name="submit" value="change password">
           <input type="password" name="passwords[old]" placeholder="old password">
@@ -76,16 +92,11 @@
 
         <br>
 
-        <form id="sign-out" class="hidden">
-          <input type="submit" name="submit" value="sign out">
-        </form>
-
-        <br>
-
         <form id="get-all-games" class="hidden">
           <input type="submit" name="submit" value="how many games have i played?">
-          <div id="all-games"></div>
         </form>
+        <br>
+          <div id="all-games"></div>
 
         <br>
 

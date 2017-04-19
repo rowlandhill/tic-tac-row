@@ -56,6 +56,7 @@ const signOutSuccess = (response) => {
   $('#container').addClass('hidden')
   $('#create-game').addClass('hidden')
   $('#alert').addClass('hidden')
+  $('#all-games').text('')
 }
 
 const signOutFailure = (error) => {
@@ -72,6 +73,7 @@ const getAllGamesFailure = (error) => {
 }
 
 const createGameSuccess = (data) => {
+  console.log(data)
   gameLogic.resetBoard()
   gameLogic.changeUiMessage('FIGHT!')
   $('#container').removeClass('hidden')
@@ -100,11 +102,11 @@ const joinGameFailure = (error) => {
   console.error(error)
 }
 
-const gameStateSuccess = (response) => {
+const updateGameSuccess = (response) => {
   console.log('response is', response)
 }
 
-const gameStateFailure = (error) => {
+const updateGameFailure = (error) => {
   console.error('uh what' + error)
 }
 
@@ -125,6 +127,6 @@ module.exports = {
   getIdFailure,
   joinGameSuccess,
   joinGameFailure,
-  gameStateSuccess,
-  gameStateFailure
+  updateGameSuccess,
+  updateGameFailure
 }

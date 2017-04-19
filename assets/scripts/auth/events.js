@@ -77,11 +77,11 @@ const onJoinGame = function (event) {
     .catch(ui.joinGameFailure)
 }
 
-const onGameState = function (event) {
+const onUpdateGame = function (event) {
   console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
-  api.gameState(data)
+  api.updateGame(data)
     .then(ui.gameStateSuccess)
     .catch(ui.gameStateFailure)
 }
@@ -104,7 +104,7 @@ const addHandlers = () => {
   $('#create-game').on('submit', onCreateGame)
   $('#get-id').on('submit', onGetId)
   $('#join-game').on('submit', onJoinGame)
-  $('#game-state').on('submit', onGameState)
+  $('td-square').on('click', onUpdateGame)
 }
 
 module.exports = {
