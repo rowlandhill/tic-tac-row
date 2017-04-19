@@ -65,6 +65,7 @@ const signOutSuccess = (response) => {
   $('#container').addClass('hidden')
   $('#create-game').addClass('hidden')
   $('#alert').addClass('hidden')
+  $('#get-id').addClass('hidden')
   $('#all-games').text('')
 }
 
