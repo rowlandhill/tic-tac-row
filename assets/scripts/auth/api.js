@@ -89,8 +89,8 @@ const joinGame = (data) => {
   })
 }
 
-const updateGame = (gameArray, turn, win) => {
-  console.log(gameArray, turn, win)
+const updateGame = (data) => {
+  console.log(data + 'PATCH TEST DATA')
   event.preventDefault()
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
@@ -98,15 +98,7 @@ const updateGame = (gameArray, turn, win) => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      game: {
-        cell: {
-          index: gameArray,
-          value: turn
-        },
-        over: win
-      }
-    }
+    data: data
   })
 }
 

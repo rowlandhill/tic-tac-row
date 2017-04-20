@@ -1,6 +1,6 @@
 'use strict'
 
-const apiUpdate = require('../scripts/auth/api.js')
+const updateGame = require('../scripts/auth/api.js').updateGame
 
 let turn = 'X'
 let win = false
@@ -34,17 +34,23 @@ const startGame = () => {
 // if a turn has been played, change alert to pick another square
 
 $('td.square').on('click', function () {
+  const update = {cell: {index: $(this).data('square'), value: turn}}
   if ($(this)[0].innerHTML === '') {
     $(this).text(turn)
     gameArray[($(this).data('square'))] = turn
     // console.log(gameArray)
     $('#move_marker_form').val(turn)
     $('#index_form').val(+$(this).attr('id'))
-    apiUpdate.updateGame(gameArray, turn, win)
+    // apiUpdate.updateGame(gameArray, turn, win)
     winnerCheck()
+    if (win === true) {
+      update.over = true
+    }
   } else {
     changeAlert('pick another square, dummy!')
+    update.over = false
   }
+  updateGame({game: update})
 })
 
 const endGame = () => {
@@ -57,7 +63,7 @@ const endGame = () => {
     $('#game_over_form').val('true')
     // $('td.square').off('click')
   }
-  apiUpdate.updateGame(gameArray, turn, win)
+  // apiUpdate.updateGame(gameArray, turn, win)
 }
 
 const resetBoard = () => {
