@@ -37,7 +37,7 @@ $('td.square').on('click', function () {
   if ($(this)[0].innerHTML === '') {
     $(this).text(turn)
     gameArray[($(this).data('square'))] = turn
-    console.log(gameArray)
+    // console.log(gameArray)
     $('#move_marker_form').val(turn)
     $('#index_form').val(+$(this).attr('id'))
     apiUpdate.updateGame(gameArray, turn, win)
@@ -84,7 +84,7 @@ const changeTurn = () => {
     turn = 'X'
   }
   moves += 1
-  console.log(moves)
+  // console.log(moves)
   changeAlert('it\'s ' + turn + '\'s turn now')
 }
 

@@ -79,7 +79,7 @@ const onJoinGame = function (event) {
 }
 
 const onUpdateGame = function (event) {
-  console.log(data)
+  // console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
   api.updateGame(data)

@@ -89,3 +89,9 @@ h3 {
     padding-top: 10px;
     text-align: center;
   }
+
+@media (max-width: 300px) {
+    header {
+      width: 80%;
+   }
+}
