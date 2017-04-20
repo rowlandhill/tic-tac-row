@@ -90,7 +90,7 @@ const joinGame = (data) => {
 }
 
 const updateGame = (data) => {
-  console.log(data + 'PATCH TEST DATA')
+  // console.log(data + 'PATCH TEST DATA')
   event.preventDefault()
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,

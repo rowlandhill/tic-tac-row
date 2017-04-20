@@ -4,7 +4,7 @@ const store = require('../store.js')
 const gameLogic = require('../gamelogic.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   // $('#sign-up').addClass('hidden')
   $('#sign-up').addClass('hidden')
   gameLogic.changeUiMessage('thanks for signing up! please sign in')
@@ -16,7 +16,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   store.user = data.user
   gameLogic.changeUiMessage('what would you like to do? you can create a game, check your stats, check previous games or change your password.  the possibilities are unlimited, as long as unlimited === 4')
   // $('#sign-in').addClass('hidden')
@@ -44,7 +44,7 @@ const signInFailure = (error) => {
 }
 
 const changePasswordSuccess = (response) => {
-  console.log('response is ', response)
+  // console.log('response is ', response)
   gameLogic.changeUiMessage('success! don\'t forget your new password!')
 }
 
@@ -54,7 +54,7 @@ const changePasswordFailure = (error) => {
 }
 
 const signOutSuccess = (response) => {
-  console.log('response is', response)
+  // console.log('response is', response)
   gameLogic.changeUiMessage('thanks for playing! please log in again if you\'d like to play again!')
   gameLogic.resetBoard()
   $('#sign-up').removeClass('hidden')
@@ -74,7 +74,7 @@ const signOutFailure = (error) => {
 }
 
 const getAllGamesSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('#all-games').text(data.games.length + ' games so far!')
 }
 
@@ -83,7 +83,7 @@ const getAllGamesFailure = (error) => {
 }
 
 const createGameSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   gameLogic.resetBoard()
   gameLogic.changeUiMessage('FIGHT!')
   $('#container').removeClass('hidden')
@@ -113,7 +113,7 @@ const joinGameFailure = (error) => {
 }
 
 const updateGameSuccess = (response) => {
-  console.log('response is', response)
+  // console.log('response is', response)
 }
 
 const updateGameFailure = (error) => {

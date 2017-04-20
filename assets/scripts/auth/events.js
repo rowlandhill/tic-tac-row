@@ -51,7 +51,7 @@ const onGetAllGames = function (event) {
 }
 
 const onCreateGame = function (event) {
-  console.log(data)
+  // console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
   $('#container').removeClass('hidden')
@@ -61,7 +61,7 @@ const onCreateGame = function (event) {
 }
 
 const onGetId = function (event) {
-  console.log(data)
+  // console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
   api.getId(data.game.id)
@@ -70,7 +70,7 @@ const onGetId = function (event) {
 }
 
 const onJoinGame = function (event) {
-  console.log(data)
+  // console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
   api.joinGame(data)
