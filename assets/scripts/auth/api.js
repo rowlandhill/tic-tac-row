@@ -65,12 +65,12 @@ const createGame = (data) => {
   })
 }
 
-const getId = () => {
+const getId = (id) => {
   event.preventDefault()
-  console.log('AHHHHHHH ' + store.game.id)
+  // console.log('AHHHHHHH ' + store.game.id)
   // put a console log here for something
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.game.id,
+    url: config.apiOrigin + '/games/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

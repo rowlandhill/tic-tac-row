@@ -64,7 +64,7 @@ const onGetId = function (event) {
   console.log(data)
   const data = getFormFields(event.target)
   event.preventDefault()
-  api.getId(data)
+  api.getId(data.game.id)
     .then(ui.getIdSuccess)
     .catch(ui.getIdFailure)
 }
