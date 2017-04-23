@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  width: 700px;
+  max-width: 500px;
   margin: auto;
   font-family: 'Raleway', sans-serif;
   background-color: #d6d6d6;
@@ -39,7 +39,7 @@ h3 {
 
   #alert {
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   #all-games {

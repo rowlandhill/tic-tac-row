@@ -6,19 +6,21 @@ const gameLogic = require('../gamelogic.js')
 const signUpSuccess = (data) => {
   // console.log(data)
   // $('#sign-up').addClass('hidden')
+  document.getElementById('sign-up').reset()
   $('#sign-up').addClass('hidden')
   gameLogic.changeUiMessage('thanks for signing up! please sign in')
 }
 
 const signUpFailure = (error) => {
   console.log(error)
+  document.getElementById('sign-up').reset()
   gameLogic.changeUiMessage('user name taken, or passwords didn\'t match - please try again!')
 }
 
 const signInSuccess = (data) => {
   // console.log(data)
   store.user = data.user
-  gameLogic.changeUiMessage('what would you like to do? you can create a game, check your stats, check previous games or change your password.  the possibilities are unlimited, as long as unlimited === 4')
+  gameLogic.changeUiMessage('what would you like to do? you can create a game, check how many games you\'ve played or change your password!')
   // $('#sign-in').addClass('hidden')
   // $('#change-password').removeClass('hidden')
   // $('#sign-out').removeClass('hidden')
@@ -27,6 +29,7 @@ const signInSuccess = (data) => {
   // if ($('#sign-up').not('hidden')) {
   //   $('#sign-up').addClass('hidden')
   // }
+  document.getElementById('sign-in').reset()
   $('#sign-in').addClass('hidden')
   $('#change-password').removeClass('hidden')
   $('#sign-out').removeClass('hidden')
@@ -40,16 +43,19 @@ const signInSuccess = (data) => {
 
 const signInFailure = (error) => {
   console.error(error)
+  document.getElementById('sign-in').reset()
   gameLogic.changeUiMessage('you either haven\'t signed up yet, or you typed something wrong - please try again!')
 }
 
 const changePasswordSuccess = (response) => {
   // console.log('response is ', response)
   gameLogic.changeUiMessage('success! don\'t forget your new password!')
+  document.getElementById('change-password').reset()
 }
 
 const changePasswordFailure = (error) => {
   console.error(error)
+  document.getElementById('change-password').reset()
   gameLogic.changeUiMessage('old password typed incorrectly, please try again!')
 }
 
@@ -84,6 +90,7 @@ const getAllGamesFailure = (error) => {
 
 const createGameSuccess = (data) => {
   // console.log(data)
+  $('#all-games').text('')
   gameLogic.resetBoard()
   gameLogic.changeUiMessage('FIGHT!')
   $('#container').removeClass('hidden')

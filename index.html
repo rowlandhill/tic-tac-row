@@ -21,9 +21,9 @@
       <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
-          <input name="credentials[email]" type="text" value="an@example.email">
-          <input name="credentials[password]" type="password" value="">
-          <input name="credentials[password_confirmation]" type="password" value="">
+          <input name="credentials[email]" type="text" value="" placeholder="desired username">
+          <input name="credentials[password]" type="password" value="" placeholder="password">
+          <input name="credentials[password_confirmation]" type="password" value="" placeholder="confirm password">
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
@@ -31,8 +31,8 @@
       <form id="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
-          <input name="credentials[email]" type="text" value="">
-          <input name="credentials[password]" type="password" value="">
+          <input name="credentials[email]" type="text" value="" placeholder="username">
+          <input name="credentials[password]" type="password" value="" placeholder="password">
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
       </form>
@@ -41,6 +41,14 @@
      <input id="index_form" name="game[cell][index]" type="text" value="0">
      <input id="move_marker_form" name="game[cell][value]" type="text" value="x">
      <input id="game_over_form" name="game[over]" type="text" value="false">
+      </form>
+
+      <br>
+
+      <form id="change-password" class="hidden">
+        <input type="submit" name="submit" value="change password">
+        <input type="password" name="passwords[old]" placeholder="old password">
+        <input type="password" name="passwords[new]" placeholder="new password">
       </form>
 
       <br>
@@ -85,14 +93,6 @@
 
         <br>
 
-        <form id="change-password" class="hidden">
-          <input type="submit" name="submit" value="change password">
-          <input type="password" name="passwords[old]" placeholder="old password">
-          <input type="password" name="passwords[new]" placeholder="new password">
-        </form>
-
-        <br>
-
         <form id="get-all-games" class="hidden">
           <input type="submit" name="submit" value="how many games have i played?">
         </form>
@@ -101,13 +101,13 @@
 
         <br>
 
-        <form id="get-id" class="hidden">
+        <!-- <form id="get-id" class="hidden">
         <p>get game by id</p>
 
           <input type="submit" name="submit" value="Get ID">
           <input name="game[id]" type="text" placeholder="game id">
           <div id="picked-game"></div>
-        </form>
+        </form> -->
 
       <br>
       <br>

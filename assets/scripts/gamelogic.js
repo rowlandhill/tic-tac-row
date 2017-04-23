@@ -61,6 +61,7 @@ const endGame = () => {
     $('#container').addClass('hidden')
     $('#ui-message').text('')
     $('#game_over_form').val('true')
+    $('#all-games').text('')
     // $('td.square').off('click')
   }
   // apiUpdate.updateGame(gameArray, turn, win)
@@ -80,6 +81,7 @@ const resetBoard = () => {
 const gameDraw = () => {
   changeAlert('a tie? boooooo! go home and think about what you\'ve done.')
   $('#container').addClass('hidden')
+  $('#ui-message').text('')
   // $('td.square').unbind('click')
 }
 
