@@ -61,7 +61,7 @@ const changePasswordFailure = (error) => {
 
 const signOutSuccess = (response) => {
   // console.log('response is', response)
-  gameLogic.changeUiMessage('thanks for playing! please log in again if you\'d like to play again!')
+  gameLogic.changeUiMessage('thanks for playing! please log in if you\'d like to play again!')
   gameLogic.resetBoard()
   $('#sign-up').removeClass('hidden')
   $('#sign-in').removeClass('hidden')
