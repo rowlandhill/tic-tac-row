@@ -34,7 +34,7 @@ const startGame = () => {
 // if a turn has been played, change alert to pick another square
 
 $('td.square').on('click', function () {
-  const update = {cell: {index: $(this).data('square'), value: turn}}
+  const update = {cell: {index: $(this).data('square'), value: turn}, over: win}
   if ($(this)[0].innerHTML === '') {
     $(this).text(turn)
     gameArray[($(this).data('square'))] = turn
