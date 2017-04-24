@@ -79,6 +79,7 @@ const resetBoard = () => {
 }
 
 const gameDraw = () => {
+  win = true
   changeAlert('a tie? boooooo! go home and think about what you\'ve done.')
   $('#container').addClass('hidden')
   $('#ui-message').text('')
