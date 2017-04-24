@@ -35,7 +35,7 @@ const signInSuccess = (data) => {
   $('#sign-out').removeClass('hidden')
   $('#get-all-games').removeClass('hidden')
   $('#create-game').removeClass('hidden')
-  $('#get-id').removeClass('hidden')
+  // $('#get-id').removeClass('hidden')
   if ($('#sign-up').not('hidden')) {
     $('#sign-up').addClass('hidden')
   }
@@ -71,7 +71,7 @@ const signOutSuccess = (response) => {
   $('#container').addClass('hidden')
   $('#create-game').addClass('hidden')
   $('#alert').addClass('hidden')
-  $('#get-id').addClass('hidden')
+  // $('#get-id').addClass('hidden')
   $('#all-games').text('')
 }
 
