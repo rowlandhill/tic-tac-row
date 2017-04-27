@@ -6,13 +6,13 @@
 
 ---
 
-### This SPA uses HTML, CSS, JavaScript and jQuery.  In its current state, it is not quite a SPA, since the reset
-### button refreshes the page.  Eventually I would like to add Bootstrap to the technologies list.
+### Technologies used: this SPA uses HTML, CSS, JavaScript and jQuery.
+### Eventually I would like to add Bootstrap to the technologies list.
 
 ---
 
 ### Document your planning and tell a story about your development process and problem-solving strategy:
-I began planning by drawing out a diagram of how I wanted the app to look.  It's not entirely there, but
+I began planning by drawing out a diagram of how I wanted the app to look.  The finished product doesn't look exactly like my diagram, but
 it was helpful to have a visual before I started building.
 I then mapped out the steps that I would take to move the project forward, with a ton of help
 from the provided "to do" list:
@@ -26,13 +26,10 @@ and no additional moves can be made.  Also, no ties or illegal moves.
 ---
 
 ### Unsolved problems:
-- New issues: sign up, sign in, sign out: everything worked on local, but now do not work with heroku :(
-- Reset button refreshes page
-- Scores are not displayed or linked to the game
-- Certain functions that are displayed should be hidden
-- Placement on the page is not ideal
-- I would like it to look much better
+- Placement on the page is fine, but I would like it to eventually reflect my original diagram
+- I would like to add a leaderboard, to show who has won the most games out of everyone
 - I would like to add some graphics and sounds
+- I would like to add bootstrap buttons and just give it a cleaner overall look
 
 ---
 
@@ -52,7 +49,7 @@ in and out with a password.
 
 I would like to be able to change my password if I want.
 
-I would like my record saved to my account, and I would like to see the rankings of the top 5-10
+I would like to be able to see how many games I've played, and I would eventually like to see the rankings of the top 5-10
 users shown on the app, like an arcade.
 
 I want to be able to click a button to start a new game without having to refresh the page.
