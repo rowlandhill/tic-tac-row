@@ -19,19 +19,31 @@
       <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
-          <input name="credentials[email]" type="text" value="" placeholder="desired username">
-          <input name="credentials[password]" type="password" value="" placeholder="password">
-          <input name="credentials[password_confirmation]" type="password" value="" placeholder="confirm password">
-          <input type="submit" name="submit" value="Sign up!">
+          <div class="form-group">
+<input class="form-control" name="credentials[email]" type="text" value="" placeholder="desired username">
+</div>
+          <div class="form-group">
+  <input class="form-control" name="credentials[password]" type="password" value="" placeholder="password">
+  </div>
+          <div class="form-group">
+  <input class="form-control" name="credentials[password_confirmation]" type="password" value="" placeholder="confirm password">
+</div>
+          <input class="btn btn-default" type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
 <br>
       <form id="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
-          <input name="credentials[email]" type="text" value="" placeholder="username">
-          <input name="credentials[password]" type="password" value="" placeholder="password">
-          <input type="submit" name="submit" value="Sign in!">
+          <div class="form-group">
+          <input class="form-control" name="credentials[email]" type="text" value="" placeholder="username">
+        </div>
+          <div class="form-group">
+          <input class="form-control" name="credentials[password]" type="password" value="" placeholder="password">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-default" type="submit" name="submit" value="Sign in!">
+        </div>
         </fieldset>
       </form>
 
@@ -44,15 +56,21 @@
       <br>
 
       <form id="change-password" class="hidden">
-        <input type="submit" name="submit" value="change password">
-        <input type="password" name="passwords[old]" placeholder="old password">
-        <input type="password" name="passwords[new]" placeholder="new password">
+        <div class="form-group">
+        <input class="btn btn-default" type="submit" name="submit" value="change password">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="passwords[old]" placeholder="old password">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="passwords[new]" placeholder="new password">
+      </div>
       </form>
 
       <br>
 
       <form id="create-game" class="hidden">
-          <input type="submit" name="submit" value="Create game">
+          <input class="btn btn-default" type="submit" name="submit" value="Create game">
       </form>
 
       <br>
@@ -86,13 +104,13 @@
       <br>
 
       <form id="sign-out" class="hidden">
-        <input type="submit" name="submit" value="sign out">
+        <input class="btn btn-default" type="submit" name="submit" value="sign out">
       </form>
 
         <br>
 
         <form id="get-all-games" class="hidden">
-          <input type="submit" name="submit" value="how many games have i played?">
+          <input class="btn btn-default" type="submit" name="submit" value="how many games have i played?">
         </form>
         <br>
           <div id="all-games"></div>
