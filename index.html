@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Row</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <!-- <script src="assets/scripts/gamelogic.js"></script> -->
+    </head>
+    <body class="container-fluid">
+
+      <h1>tic tac row</h1>
+      <p id="ui-message">Welcome!  Please sign up, if you haven't already, or sign in if you have!</p>
+
+      <form id="sign-up">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <div class="form-group">
+<input class="form-control" name="credentials[email]" type="text" value="" placeholder="desired username">
+</div>
+          <div class="form-group">
+  <input class="form-control" name="credentials[password]" type="password" value="" placeholder="password">
+  </div>
+          <div class="form-group">
+  <input class="form-control" name="credentials[password_confirmation]" type="password" value="" placeholder="confirm password">
+</div>
+          <input class="btn btn-default" type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+<br>
+      <form id="sign-in">
+        <fieldset>
+          <legend>Sign in!</legend>
+          <div class="form-group">
+          <input class="form-control" name="credentials[email]" type="text" value="" placeholder="username">
+        </div>
+          <div class="form-group">
+          <input class="form-control" name="credentials[password]" type="password" value="" placeholder="password">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-default" type="submit" name="submit" value="Sign in!">
+        </div>
+        </fieldset>
+      </form>
+
+      <form id="game_info" class="hidden">
+     <input id="index_form" name="game[cell][index]" type="text" value="0">
+     <input id="move_marker_form" name="game[cell][value]" type="text" value="x">
+     <input id="game_over_form" name="game[over]" type="text" value="false">
+      </form>
+
+      <br>
+
+      <form id="change-password" class="hidden">
+        <div class="form-group">
+        <input class="btn btn-default" type="submit" name="submit" value="change password">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="passwords[old]" placeholder="old password">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="passwords[new]" placeholder="new password">
+      </div>
+      </form>
+
+      <br>
+
+      <form id="create-game" class="hidden">
+          <input class="btn btn-default" type="submit" name="submit" value="Create game">
+      </form>
+
+      <br>
+
+        <div id="alert" class="hidden">New game! X always starts</div>
+        <div id="container" class="hidden">
+
+        <br>
+        <br>
+
+      <table id="gameboard">
+        <tr>
+          <td class="square" data-square="0"></td>
+          <td class="square" data-square="1"></td>
+          <td class="square" data-square="2"></td>
+        </tr>
+        <tr>
+          <td class="square" data-square="3"></td>
+          <td class="square" data-square="4"></td>
+          <td class="square" data-square="5"></td>
+        </tr>
+        <tr>
+          <td class="square" data-square="6"></td>
+          <td class="square" data-square="7"></td>
+          <td class="square" data-square="8"></td>
+        </tr>
+      </table>
+      </div>
+
+      <br>
+      <br>
+
+      <form id="sign-out" class="hidden">
+        <input class="btn btn-default" type="submit" name="submit" value="sign out">
+      </form>
+
+        <br>
+
+        <form id="get-all-games" class="hidden">
+          <input class="btn btn-default" type="submit" name="submit" value="how many games have i played?">
+        </form>
+        <br>
+          <div id="all-games"></div>
+
+        <br>
+
+        <form id="get-id" class="hidden">
+        <p>get game by id</p>
+
+          <input type="submit" name="submit" value="Get ID">
+          <input name="game[id]" type="text" placeholder="game id">
+          <div id="picked-game"></div>
+        </form>
+
+      <br>
+      <br>
+      <br>
+
+
+    <br>
+    <br>
+    <br>
+
+    </body>
+</html>
