@@ -6,7 +6,7 @@
 
 ---
 
-### Technologies used: this SPA uses HTML, CSS, JavaScript and jQuery.
+### Technologies used: this SPA uses HTML, CSS/SCSS, JavaScript, jQuery, AJAX, Bootstrap and Game API.
 ### Eventually I would like to add Bootstrap to the technologies list.
 
 ---
