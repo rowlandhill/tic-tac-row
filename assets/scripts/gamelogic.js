@@ -56,8 +56,10 @@ $('td.square').on('click', function () {
 const endGame = () => {
   if (moves === 9 && win === false) {
     gameDraw()
+    $('td.square').text('')
   } else {
     changeAlert(turn + ' wins!')
+    $('td.square').text('')
     $('#container').addClass('hidden')
     $('#ui-message').text('')
     $('#game_over_form').val('true')
@@ -68,6 +70,7 @@ const endGame = () => {
 }
 
 const resetBoard = () => {
+  $('td.square').text('')
   startGame()
   gameArray = ['', '', '', '', '', '', '', '', '']
   turn = 'X'
@@ -75,7 +78,6 @@ const resetBoard = () => {
   win = false
   $('#container').removeClass('hidden')
   $('td.square').on('click', startGame())
-  $('td.square').text('')
 }
 
 const gameDraw = () => {
