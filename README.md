@@ -13,7 +13,7 @@
 
 ### Document your planning and tell a story about your development process and problem-solving strategy:
 I began planning by drawing out a diagram of how I wanted the app to look.  The finished product doesn't look exactly like my diagram, but
-it was helpful to have a visual before I started building.
+it was helpful to have a visual before I started building.  After that, I generated my user story, which I think I should have done first.
 I then mapped out the steps that I would take to move the project forward, with a ton of help
 from the provided "to do" list:
 - Create a basic board with HTML and CSS
@@ -21,7 +21,16 @@ from the provided "to do" list:
 - Build the engine, make sure it works, test for winners, make sure you can play a full game where a winner is declared
 and no additional moves can be made.  Also, no ties or illegal moves.
 - Connect the game to the backend
-- Make it look good
+- Make it look good (if time allows)
+
+I collaborated with a few classmates to get things started, and whenever we ran into issues, odds were good that one of us ran into something
+similar and could nudge the other one in the right direction.
+
+When it came to debugging, console.log was a massive help when I was trying to pass specific data and wanted to make sure the data I expected
+was being passed through.
+Debugger was a big help in freezing the application so I could see what was happening at that given moment in time.  Debugger came in handy when I was trying to figure out why my PATCH was not updating my game from "over: false" to "over: true".  Being able to freeze the application in time was huge.
+
+The Issue Queue was a huge help, too, whenever I was stuck beyond my abilities to detect.
 
 ---
 
